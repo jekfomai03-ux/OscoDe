@@ -42,14 +42,14 @@
 
     <main>
       <section class="hero" id="studio">
-        <p class="hero__eyebrow">Мультидисциплинарная студия</p>
-        <h1 class="hero__title">
+        <p class="hero__eyebrow" data-reveal>Мультидисциплинарная студия</p>
+        <h1 class="hero__title" data-reveal>
           <span class="hero__line" data-split style="--ld: 0s">Делаем</span>
           <span class="hero__line hero__line--accent" data-split style="--ld: 0.15s">сильные</span>
           <span class="hero__line" data-split style="--ld: 0.3s">цифровые</span>
           <span class="hero__line" data-split style="--ld: 0.45s">вещи</span>
         </h1>
-        <div class="hero__bottom">
+        <div class="hero__bottom" data-reveal>
           <a class="hero__cta" href="#showreel" id="showreel">Шоурил</a>
           <p class="hero__lead">
             Мы на стыке арт-дирекшна, продукта и технологий: делаем опыты, о которых говорят,
@@ -60,7 +60,7 @@
 
       <section class="intro">
         <div class="intro__grid">
-          <p class="intro__text">
+          <p class="intro__text" data-reveal>
             Наша цель — не «красивый сайт ради сайта», а система смыслов, движения и такта,
             которая удерживает внимание и переводит его в действие.
           </p>
@@ -73,15 +73,15 @@
       </section>
 
       <section class="work" id="work">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <h2 class="section-head__title">Избранные проекты</h2>
           <p class="section-head__meta">2026 — сейчас</p>
         </div>
         <div class="work__list">
           <article class="case">
             <a class="case__link" href="#">
-              <div class="case__media case__media--1"></div>
-              <div class="case__body">
+              <div class="case__media case__media--1" data-reveal></div>
+              <div class="case__body" data-reveal>
                 <span class="case__tag">Web</span>
                 <h3 class="case__title">LAGUNA</h3>
                 <p class="case__desc">Иммерсивный опыт для салона LAGUNA</p>
@@ -93,13 +93,13 @@
       </section>
 
       <section class="manifesto" id="values">
-        <p class="manifesto__label">Как мы это делаем</p>
+        <p class="manifesto__label" data-reveal>Как мы это делаем</p>
         <h2 class="manifesto__title" data-manifesto>
           Создаём эмоциональные опыты, которые меняют метрики
         </h2>
-        <div class="manifesto__content">
+        <div class="manifesto__content" data-reveal>
           <p>
-            OscoDe — команда дизайна и инженерии: мы работаем с клиентами по всему миру.
+            OscoDe — команда дизайна и инженерии: мы работаем из Москвы и Берлина с клиентами по всему миру.
             Фокус на качестве картинки, честности интерфейса и технической выверенности — наша подпись.
           </p>
           <p>
@@ -108,11 +108,134 @@
         </div>
       </section>
 
+      <section class="calculator" id="calculator">
+        <div class="section-head" data-reveal>
+          <h2 class="section-head__title">Калькулятор стоимости</h2>
+          <p class="section-head__meta">Диапазон за разработку</p>
+        </div>
+
+        <div class="calculator__grid" data-reveal>
+          <div class="calculator__col">
+            <div class="field">
+              <label for="calcType">Тип проекта</label>
+              <select id="calcType">
+                <option value="landing" selected>Лендинг</option>
+                <option value="multipage">Многостраничный сайт</option>
+                <option value="catalog">Сайт-каталог</option>
+                <option value="webapp">Веб‑приложение</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="calcPages">Объём (страницы)</label>
+              <select id="calcPages">
+                <option value="1" selected>1</option>
+                <option value="2-3">2–3</option>
+                <option value="4-7">4–7</option>
+                <option value="8-15">8–15</option>
+                <option value="16+">16+</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="calcContent">Контент</label>
+              <select id="calcContent">
+                <option value="ready" selected>Готовые тексты и фото</option>
+                <option value="partial">Частичная подготовка</option>
+                <option value="need">Нужна подготовка</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calculator__col">
+            <div class="field">
+              <label for="calcBrief">ТЗ / бриф</label>
+              <select id="calcBrief">
+                <option value="clear" selected>Готовое</option>
+                <option value="partial">Частично</option>
+                <option value="none">Пока нет</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="calcTime">Сроки</label>
+              <select id="calcTime">
+                <option value="standard" selected>Стандарт</option>
+                <option value="fast">Ускоренно</option>
+                <option value="rush">Срочно</option>
+              </select>
+            </div>
+
+            <div class="features">
+              <p class="features__title">Функционал</p>
+
+              <label class="check">
+                <input type="checkbox" data-feat="form" checked />
+                Лид‑форма / заявки
+              </label>
+
+              <label class="check">
+                <input type="checkbox" data-feat="catalog" />
+                Каталог / карточки
+              </label>
+
+              <label class="check">
+                <input type="checkbox" data-feat="filters" />
+                Поиск, фильтры, сортировка
+              </label>
+
+              <label class="check">
+                <input type="checkbox" data-feat="cms" />
+                CMS / админка
+              </label>
+
+              <label class="check">
+                <input type="checkbox" data-feat="auth" />
+                Авторизация
+              </label>
+
+              <label class="check">
+                <input type="checkbox" data-feat="payment" />
+                Оплата / корзина
+              </label>
+
+              <label class="check">
+                <input type="checkbox" data-feat="integrations" />
+                Интеграции (CRM/мессенджеры)
+              </label>
+
+              <label class="check">
+                <input type="checkbox" data-feat="animations" />
+                Микро‑анимации / интерактив
+              </label>
+            </div>
+
+            <div class="calculator__result" aria-live="polite">
+              <div class="calculator__range">
+                <span class="calculator__rangeLabel">Оценка:</span>
+                <span id="calcRangeText">—</span>
+              </div>
+              <p class="calculator__hint">
+                Это ориентир. Итоговая смета формируется после брифа.
+              </p>
+              <a
+                class="btn btn--primary calculator__btn"
+                href="https://wa.me/79194249223"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Обсудить с командой
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <footer class="footer" id="contact">
           <div class="footer__city">
             <h3>Владикавказ <span class="footer__dot">.</span></h3>
           </div>
-        <div class="footer__contact">
+        <div class="footer__contact" data-reveal>
           <h2 class="footer__heading">Связаться</h2>
           <a class="footer__email" href="mailto:hello@oscode.studio">jekfomai03@gmail.com</a>
           <ul class="footer__phones" aria-label="Телефоны">
@@ -127,12 +250,14 @@
             <li><a href="https://www.instagram.com/osco.de?igsh=a25kbjk2dnR3MXRl">Ins</a></li>
             <li><a href="https://t.me/DATI05" target="_blank" rel="noopener noreferrer">Tg</a></li>
           </ul>
-          <!-- <p class="footer__legal">
-            <a href="#">Политика конфиденциальности</a>
+          <p class="footer__legal">
+            <a href="privacy.html">Политика конфиденциальности</a>
             ·
-            <span>Язык: <a href="#">Русский</a></span>
+            <a href="offer.html">Оферта и условия</a>
+            ·
+            <a href="requisites.html">Реквизиты</a>
           </p>
- -->        </div>
+        </div>
       </footer>
     </main>
 
@@ -148,7 +273,7 @@
       </div>
     </div>
 
-    <audio id="ambient" src="fon.mp3" loop preload="metadata" playsinline hidden></audio>
+    <audio id="ambient" src="fon2.mp3" loop preload="metadata" playsinline hidden></audio>
 
     <script src="main.js"></script>
   </body>
