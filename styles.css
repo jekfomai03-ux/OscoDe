@@ -21,6 +21,26 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+[data-reveal].reveal--active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -485,6 +505,131 @@ body {
 
 .footer__legal a { color: inherit; }
 
+.calculator {
+  padding: clamp(4rem, 10vw, 7rem) clamp(1rem, 4vw, 3rem);
+  border-top: 1px solid var(--line);
+}
+
+.calculator__grid {
+  display: grid;
+  gap: 2.25rem;
+}
+
+@media (min-width: 900px) {
+  .calculator__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+  }
+}
+
+.calculator__col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field label {
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.field select,
+.field input[type="range"] {
+  width: 100%;
+}
+
+.field select {
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 0.75rem 0.9rem;
+  border-radius: 2px;
+  font-family: inherit;
+}
+
+.field__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.field__value {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.features {
+  padding-top: 0.25rem;
+}
+
+.features__title {
+  margin: 0 0 0.75rem;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.check {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.check input {
+  margin-top: 0.35rem;
+  accent-color: var(--accent);
+}
+
+.calculator__result {
+  border-top: 1px solid var(--line);
+  padding-top: 1.25rem;
+}
+
+.calculator__range {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: clamp(1.3rem, 2.6vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.calculator__rangeLabel {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.calculator__hint {
+  margin: 0.75rem 0 1rem;
+  color: var(--text-muted);
+  max-width: 55ch;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.calculator__btn {
+  width: fit-content;
+}
+
 .cookie {
   position: fixed;
   bottom: 0;
@@ -554,4 +699,77 @@ body {
     margin: 0 -1rem;
   }
   .case__link:hover { background: rgba(255, 255, 255, 0.03); }
+}
+
+.legal-page {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.legal {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(5rem, 10vw, 7rem) clamp(1rem, 4vw, 2rem) clamp(3rem, 8vw, 5rem);
+}
+
+.legal__back {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.legal__back:hover {
+  color: var(--accent);
+}
+
+.legal__title {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.03em;
+}
+
+.legal__lead {
+  margin: 0 0 2rem;
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+
+.legal__section {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.legal__section:last-of-type {
+  border-bottom: 1px solid var(--line);
+}
+
+.legal__section h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+}
+
+.legal__section p {
+  margin: 0 0 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.legal__section ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--text-muted);
+}
+
+.legal__section li {
+  margin: 0.35rem 0;
+}
+
+.legal__updated {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
 }
