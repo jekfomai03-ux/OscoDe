@@ -86,6 +86,11 @@ body {
 
 .nav a:hover { opacity: 1; }
 
+.nav a[aria-current="page"] {
+  opacity: 1;
+  color: var(--accent);
+}
+
 .header-actions { display: flex; align-items: center; gap: 0.75rem; }
 
 .btn-sound {
@@ -772,4 +777,203 @@ body {
   margin-top: 1.5rem;
   font-size: 0.875rem;
   color: var(--text-muted);
+}
+
+/* Страница вакансий */
+.careers-page {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.careers {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: clamp(5.5rem, 12vw, 7.5rem) clamp(1rem, 4vw, 2rem) clamp(4rem, 10vw, 6rem);
+}
+
+.careers__eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+
+.careers__title {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.careers__lead {
+  margin: 0 0 3rem;
+  max-width: 52ch;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.vacancies {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.vacancy {
+  border-top: 1px solid var(--line);
+  padding: 2.5rem 0;
+  display: grid;
+  gap: 2rem;
+}
+
+.vacancy:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 800px) {
+  .vacancy {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 3rem;
+    align-items: start;
+    padding: 3rem 0;
+  }
+}
+
+.vacancy__head {
+  position: relative;
+}
+
+.vacancy__tag {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+.vacancy__title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.vacancy__pitch {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.vacancy__pitch strong {
+  color: var(--text);
+  font-weight: 400;
+}
+
+.vacancy__body {
+  border-left: 1px solid var(--line);
+  padding-left: 0;
+}
+
+@media (min-width: 800px) {
+  .vacancy__body {
+    padding-left: 2rem;
+  }
+}
+
+@media (max-width: 799px) {
+  .vacancy__body {
+    border-left: none;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(232, 228, 220, 0.06);
+  }
+}
+
+.vacancy__sub {
+  margin: 0 0 0.65rem;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.vacancy__sub:not(:first-of-type) {
+  margin-top: 1.5rem;
+}
+
+.vacancy__list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.vacancy__list li {
+  margin: 0.4rem 0;
+}
+
+.vacancy__note {
+  margin: 1.25rem 0 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  max-width: 48ch;
+}
+
+.vacancy__btn {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.vacancy--accent .vacancy__tag {
+  color: var(--text-muted);
+}
+
+.vacancy--accent .vacancy__head::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent), transparent);
+  opacity: 0.85;
+  border-radius: 2px;
+}
+
+@media (max-width: 799px) {
+  .vacancy--accent .vacancy__head::before {
+    left: 0;
+    width: 100%;
+    height: 3px;
+    bottom: auto;
+    top: -0.5rem;
+  }
+}
+
+.careers__footer {
+  margin: 3rem 0 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.careers__footer a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+
+.careers__footer a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.careers__back {
+  margin-left: 0.25rem;
 }

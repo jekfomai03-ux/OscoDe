@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вакансии — OscoDe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+  href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap"
+  rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="careers-page">
+  <header class="header">
+    <a class="logo" href="index.html">OscoDe</a>
+    <nav class="nav" aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="careers.html" aria-current="page">Вакансии</a>
+      <a href="index.html#contact">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="btn-sound" id="soundToggle" aria-pressed="false" title="Звук">
+        <span class="btn-sound__icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Переключить звук</span>
+      </button>
+      <button type="button" class="btn-menu" id="menuToggle" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav" hidden>
+    <nav aria-label="Мобильное меню">
+      <a href="index.html">Главная</a>
+      <a href="careers.html">Вакансии</a>
+      <a href="index.html#contact">Контакты</a>
+    </nav>
+  </div>
+
+  <main class="careers">
+    <p class="careers__eyebrow" data-reveal>Команда</p>
+    <h1 class="careers__title" data-reveal>Вакансии</h1>
+    <p class="careers__lead" data-reveal>
+      Ищем людей без обязательного опыта работы в студии — важнее идеи, чувство контента и готовность
+      развивать аккаунт вместе с нами.
+    </p>
+
+    <div class="vacancies">
+      <article class="vacancy" id="smm-instagram" data-reveal>
+        <div class="vacancy__head">
+          <span class="vacancy__tag">SMM · Instagram</span>
+          <h2 class="vacancy__title">SMM-блогер: развитие Instagram</h2>
+          <p class="vacancy__pitch">
+            Без опыта в агентстве — но с пониманием, <strong>как растить Instagram</strong>: рубрики,
+            визуал ленты, вовлечение и регулярность без «пустых» постов ради галочки.
+          </p>
+        </div>
+        <div class="vacancy__body">
+          <h3 class="vacancy__sub">Чем предстоит заниматься</h3>
+          <ul class="vacancy__list">
+            <li>Стратегия и контент-план под цели аккаунта студии</li>
+            <li>Лента, Stories, Reels — единый тон и узнаваемость</li>
+            <li>Тексты, хэштеги, взаимодействие с аудиторией и аналитика (охваты, сохранения)</li>
+          </ul>
+          <h3 class="vacancy__sub">Что важно</h3>
+          <ul class="vacancy__list">
+            <li>Примеры: свой блог, учебный кейс или концепт развития нашего аккаунта в 3–5 тезисах</li>
+            <li>Чувство трендов Reels и формата Instagram</li>
+            <li>Готовность тестировать форматы и смотреть на цифры</li>
+          </ul>
+          <p class="vacancy__note">
+            Коммерческий опыт ведения не обязателен — приложите ссылки и коротко опишите, как бы вы
+            усилили наш Instagram за первый месяц.
+          </p>
+          <a
+          class="btn btn--primary vacancy__btn"
+          href="https://t.me/DATI05"
+          >
+          Откликнуться
+        </a>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="careers__footer" data-reveal>
+    Вопросы в Telegram:
+    <a href="https://t.me/DATI05" target="_blank" rel="noopener noreferrer">@DATI05</a>
+    <a class="careers__back" href="index.html">На главную</a>
+  </p>
+</main>
+
+<audio id="ambient" src="fon2.mp3" loop preload="metadata" playsinline hidden></audio>
+
+<script src="main.js"></script>
+</body>
+</html>
